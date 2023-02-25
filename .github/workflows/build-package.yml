@@ -27,7 +27,7 @@ jobs:
           options: "--check --verbose"
           src: "./src"
           version: "~= 22.0"
-     - name: lint tests with black
+      - name: lint tests with black
         uses: psf/black@stable
         with:
           options: "--check --verbose"
