@@ -1,6 +1,6 @@
 name: Python package
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   build:
@@ -21,11 +21,17 @@ jobs:
           python -m pip install --upgrade pip
           pip install wheel
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-      - name: lint with black
+      - name: lint src with black
         uses: psf/black@stable
         with:
           options: "--check --verbose"
           src: "./src"
+          version: "~= 22.0"
+     - name: lint tests with black
+        uses: psf/black@stable
+        with:
+          options: "--check --verbose"
+          src: "./tests"
           version: "~= 22.0"
       - name: Test with pytest
         run: |
