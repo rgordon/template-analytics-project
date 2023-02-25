@@ -33,8 +33,9 @@ jobs:
           options: "--check --verbose"
           src: "./tests"
           version: "~= 22.0"
-      - name: check typehints if present
+      - name: check src typehints if present
         run: mypy src 
+      - name: check tests typehints if present
         run: mypy tests
       - name: Test with pytest
         run: |
