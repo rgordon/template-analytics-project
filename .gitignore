@@ -9,3 +9,5 @@ docs/_templates
 
 **/__pycacbe__/**
 **/*.pyc
+
+**/*.ipynb_checkpoints
