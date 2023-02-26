@@ -33,6 +33,13 @@ jobs:
           options: "--check --verbose"
           src: "./tests"
           version: "~= 22.0"
+      - name: lint notebooks with black
+        uses: psf/black@stable
+        with:
+          options: "--check --verbose"
+          src: "./notebooks"
+          jupyter: true
+          version: "~= 22.0"
       - name: check src typehints if present
         run: mypy src 
       - name: check tests typehints if present
