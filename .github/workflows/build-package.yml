@@ -37,6 +37,8 @@ jobs:
         run: mypy src 
       - name: check tests typehints if present
         run: mypy tests
+      - name: pylint on the source
+        run: pylint src
       - name: Test with pytest
         run: |
           pytest
